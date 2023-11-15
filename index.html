@@ -14,19 +14,20 @@
                 <img src="img/logo copia.png" alt="logo">
                 <h1 class="mb-0 ms-2">BOOLEAN</h1>
             </header>
+
             <main>
-                <div class="form-floating mb-3 d-flex">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Inserisci un nuovo To-Do" v-model="newToDo" @keyup.enter="addToDo">
+                <section class="form-floating mb-3 d-flex">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Inserisci un nuovo To-Do" v-model="newToDo.text" @keyup.enter="addToDo">
                     <label for="floatingInput">New To-Do</label>
                     <button type="button" class="btn btn-outline-secondary ms-2" @click="addToDo">Conferma</button>
-                </div>
+                </section>
 
                 <hr>
 
-                <div class="d-flex align-items-start mb-2" v-for="(toDo, index) in toDoS" :key="index">
-                    <p class="border border-2 rounded-3 mb-0 p-2 w-50">{{ toDo }}</p>
+                <section class="d-flex align-items-start mb-2" v-for="(toDo, index) in toDoS" :key="index">
+                    <p class="border border-2 rounded-3 mb-0 p-2 w-50" @click="toDoDone(index)" :class="toDo.done === true ? `text-decoration-line-through` : `` ">{{ toDo.text }}</p>
                     <button type="button" class="btn btn-outline-danger ms-2 border-2" @click="removeToDo(index)">X</button>
-                </div>
+                </section>
             </main>
         </div>
     </div>
