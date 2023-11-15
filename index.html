@@ -16,7 +16,7 @@
             </header>
             <main>
                 <div class="form-floating mb-3 d-flex">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Inserisci un nuovo To-Do" v-model="newToDo">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Inserisci un nuovo To-Do" v-model="newToDo" @keyup.enter="addToDo">
                     <label for="floatingInput">New To-Do</label>
                     <button type="button" class="btn btn-outline-secondary ms-2" @click="addToDo">Conferma</button>
                 </div>
