@@ -23,9 +23,9 @@
 
                 <hr>
 
-                <div class="d-flex align-items-start mb-2" v-for="(toDo) in toDoS">
+                <div class="d-flex align-items-start mb-2" v-for="(toDo, index) in toDoS" :key="index">
                     <p class="border border-2 rounded-3 mb-0 p-2 w-50">{{ toDo }}</p>
-                    <button type="button" class="btn btn-outline-danger ms-2 border-2">X</button>
+                    <button type="button" class="btn btn-outline-danger ms-2 border-2" @click="removeToDo(index)">X</button>
                 </div>
             </main>
         </div>

@@ -15,5 +15,8 @@ createApp({
             this.toDoS.push(this.newToDo);
             this.newToDo = "";
         },
+        removeToDo: function(ind) {
+            this.toDoS.splice(ind, 1);
+        },
     }
 }).mount("#app");
